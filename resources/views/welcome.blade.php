@@ -1,45 +1,18 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends('master')
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@section('styles')
+@stop
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+@section('content')
+  <div class='container'>
+    <img id="image"
+    src='http://vignette1.wikia.nocookie.net/stargate/images/0/0f/SCI_FI_Logo_HQ.jpg/revision/latest?cb=20091129052252'
+    style='width:300px'
+    alt='scifi_book_reviewer_logo'>
+    <div class='contents'>
+      <div class='title'>Scifi Book club Reviewer</div>
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
-        </div>
-    </body>
-</html>
+    </div>
+  </div>
+@stop
