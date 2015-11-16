@@ -49,3 +49,18 @@ Route::get('/debug', function() {
     echo '</pre>';
 
 });
+
+//Route::controller('submit', 'CreateController');
+//Route::post('/submit', 'CreateController@creator');
+
+/*
+ just for reference
+Route::get('/users', function () {
+	return view('users');
+});
+
+//lorem controller and routing
+Route::controller('lorem','loremController');
+Route::post('/lorem', 'loremController@generator');
+
+*/

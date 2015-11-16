@@ -1,16 +1,27 @@
 html, body {
-          height: 100%;
+      height: 100%;
       }
 
-     body {
-          margin: 0;
-          padding: 0;
-          width: 90%;
-          display: table;
-          font-weight: 100;
-          font-family: 'Lato';
+body {
+      margin: 50px;
+      padding: 0;
+      width: 90%;
+      display: table;
+      font-weight: 100;
+      font-family: 'Lato';
+      vertical-align: middle;
       }
 
-      .container {
-        align-content: center;
+.container {
+      align-content: center;
       }
+
+#logo {
+      width: 500px;
+      height: 200px;
+      }
+
+#rocket {
+    width: 70px;
+    height: 150px;
+}
