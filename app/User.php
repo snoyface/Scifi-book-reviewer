@@ -36,4 +36,14 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    public function books()
+    {
+    return $this->belongsToMany('\App\Book')->withTimestamps();;
+    }
+
+    public function comments()
+    {
+    return $this->belongsToMany('\App\Comment')->withTimestamps();;
+    }
 }

@@ -1,16 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Create;
+namespace App\Http\Controllers\createController;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 //require_once '/path/to/Faker/src/autoload.php';
 
-
-
-
-class CreateController extends Controller{
+class createController extends Controller{
       //creates new book for entry into books table
       public function creator(Request $request) {
         //take the form submissions and create vars to use
@@ -24,6 +21,5 @@ class CreateController extends Controller{
           'title' => '$title',
           'author' => '$auth',
           'summary' => '$sum',
+        ]);}};
     //return view('thanks');
-  ]);}
-}

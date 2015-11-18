@@ -10,11 +10,10 @@
        <p>Title?<br> <input type="string" name="title"
           value="{{isset($request['title']) ? $request['title']: 'Title?'}}" /></p>
        <p>Author?<br> <input type="string" name="author"
-          value="{{isset($request['author']) ? $request['title']: 'Author?'}}" /></p>
+          value="{{isset($request['author']) ? $request['author']: 'Author?'}}" /></p>
        <p>Summary?<br> <input type="string" name="summary"
-          value="{{isset($request['summary']) ? $request['title']: 'Summary?'}}" /></p>
-
- <p><input type="submit" /></p>
+          value="{{isset($request['summary']) ? $request['summary']: 'Summary?'}}" /></p>
+       <p><input type="submit" /></p>
       </form>
 </div>
 
