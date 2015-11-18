@@ -1,6 +1,11 @@
 @extends('master')
 
 @section('styles')
+<style>
+footer{
+  display: none;
+}
+</style>
 @stop
 
 @section('content')
@@ -11,14 +16,21 @@
         <div class='intro'>
           <h1>Welcome to the Scifi Book Club database!</h1><br>
           <p>This app provides you with the ability to submit new book reviews, search other book reviews, and add your own comments
-              to other reviews.</p><br>
-          <p>To submit a book, click the spaceship</p>
-          <a href='/create'>
-            <img id="rocket" src='/images/simple-rocket-hi.png'
-            alt='scifi_book_reviewer_logo'>
-          </a>
+              to other reviews.</p>
         </div>
-        
+        <div id="create_spaceship">
+          <p>To submit a book, click this spaceship</p>
+            <a href='/submit'>
+              <img id="rocket" src='/images/simple-rocket-hi.png'
+                alt='create book'>
+            </a>
+        </div>
+        <div id='login_raygun'>
+          <p>To login, click the ray gun</p>
+          <a href='/auth/login'>
+            <img id='raygun' src='/images/raygun.jpg'
+              alt='login'>
+        </div>
     </div>
   </div>
 @stop

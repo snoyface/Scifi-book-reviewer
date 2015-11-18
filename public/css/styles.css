@@ -12,6 +12,12 @@ body {
       vertical-align: middle;
       }
 
+footer{
+      position: sticky;
+      float: bottom;
+      padding: 20px;
+}
+
 .container {
       align-content: center;
       }
@@ -21,7 +27,28 @@ body {
       height: 200px;
       }
 
+#create_spaceship {
+    width: 70px;
+    height: 150px;
+    float: right;
+    position: relative;
+    padding: 20px;
+}
+
 #rocket {
     width: 70px;
     height: 150px;
+}
+
+#login_raygun {
+  width: 70px;
+  height: 150px;
+  float: left;
+  position: relative;
+  padding: 20px;
+}
+
+#raygun {
+  width: 160px;
+  height: 150px;
 }
