@@ -35,7 +35,8 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next)
     {
         if ($this->auth->check()) {
-            return redirect('/home');
+            echo "you are already logged in";<br>
+            return redirect('/');
         }
 
         return $next($request);

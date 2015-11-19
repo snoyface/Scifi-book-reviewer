@@ -4,6 +4,7 @@
 @stop
 
 @section('content')
+
 <div class="container-fluid">
 	<div class="row">
 
@@ -66,7 +67,7 @@
 
 </div>
 </div>
-
+<p>Need an account? <a href='register'>Register here...</a></p>
 
 
 
