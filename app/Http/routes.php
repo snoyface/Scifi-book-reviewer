@@ -11,6 +11,7 @@
 |
 */
 
+//starting page
 Route::get('/', function () {
     return view('welcome');
 });
@@ -61,7 +62,7 @@ Route::get('/member', function(){
     return view('members/member');
 });
 
-//Route::post('/members/submit', 'createController@creator');
+//Belows Routing not working yet, returns a broken app "Whoops there was an error"
 
 //Route::controller('members/submit', 'createController');
 //Route::post('members/submit', 'createController@creator');
@@ -87,7 +88,6 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-
 Route::controllers([
    'password' => 'Auth\PasswordController',
 ]);
@@ -108,6 +108,7 @@ Route::get('/confirm-login-worked', function() {
 
 });
 
+//setup search
 Route:get('/search', function() {
     return view('members/search');
 });
