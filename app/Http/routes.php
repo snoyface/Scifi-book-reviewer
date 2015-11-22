@@ -53,7 +53,7 @@ Route::get('/debug', function() {
 
 Route::get('/submit', function(){
 
-  return view('submit');
+  return view('/members/submit');
 });
 
 Route::get('/member', function(){
@@ -61,8 +61,10 @@ Route::get('/member', function(){
     return view('members/member');
 });
 
-//Route::controller('/members/submit', 'createController');
 //Route::post('/members/submit', 'createController@creator');
+
+//Route::controller('members/submit', 'createController');
+//Route::post('members/submit', 'createController@creator');
 
 /*
  just for reference
@@ -104,4 +106,8 @@ Route::get('/confirm-login-worked', function() {
 
     return;
 
+});
+
+Route:get('/search', function() {
+    return view('members/search');
 });

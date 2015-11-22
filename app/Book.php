@@ -6,6 +6,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
+  public function create($REQUEST) {
+    $book = new \App\Book();
+
+  # Set the parameters
+  # Note how each parameter corresponds to a field in the table
+    $title = $request -> input('title');
+    $auth = $request -> input('author');
+    $sum = $request -> input('summary');
+    
+    $book->title = $title;
+    $book->author = $auth;
+    $book->summary = $sum;
+  
+    $book -> save();
+  }
+  
 /*  public function creator(Request $request) {
     //take the form submissions and create vars to use
     $title = $request -> input('title');
