@@ -19,10 +19,10 @@ footer{
               to other reviews.</p>
         </div>
         <div id="create_spaceship">
-          <p>To submit a book, click this spaceship</p>
-            <a href='/submit'>
+          <p>To Register, click this spaceship</p>
+            <a href='/auth/login'>
               <img id="rocket" src='/images/simple-rocket-hi.png'
-                alt='create book'>
+                alt='register'>
             </a>
         </div>
         <div id='login_raygun'>
