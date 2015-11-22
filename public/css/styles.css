@@ -9,7 +9,7 @@ body {
       display: table;
       font-weight: 100;
       font-family: 'Lato';
-      vertical-align: middle;
+      margin: auto;
       }
 
 footer{
@@ -19,7 +19,7 @@ footer{
 }
 
 .container {
-      align-content: center;
+      margin: auto;
       }
 
 #logo {
@@ -30,9 +30,10 @@ footer{
 #create_spaceship {
     width: 70px;
     height: 150px;
-    float: right;
+    float: left;
     position: relative;
-    padding: 20px;
+    padding-left: 200px;
+    margin-bottom: 20px;
 }
 
 #rocket {
@@ -51,4 +52,21 @@ footer{
 #raygun {
   width: 160px;
   height: 150px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+    padding: 20px;
+}
+
+a {
+    display: block;
+    width: 60px;
 }

@@ -10,7 +10,6 @@ use App\Http\Requests;
 class createController extends Controller{
       //creates new book for entry into books table
       public function creator(Request $request) {
-        //take the form submissions and create vars to use
         $title = $request -> input('title');
         $auth = $request -> input('author');
         $sum = $request -> input('summary');
@@ -21,5 +20,5 @@ class createController extends Controller{
           'title' => '$title',
           'author' => '$auth',
           'summary' => '$sum',
-        ]);}};
+        }};
     //return view('thanks');

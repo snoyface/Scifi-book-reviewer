@@ -51,13 +51,18 @@ Route::get('/debug', function() {
 
 });
 
-Route::post('/submit', function(){
+Route::get('/submit', function(){
 
   return view('submit');
 });
 
-//Route::controller('submit', 'createController');
-//Route::post('/submit', 'createController@creator');
+Route::get('/member', function(){
+    
+    return view('members/member');
+});
+
+//Route::controller('/members/submit', 'createController');
+//Route::post('/members/submit', 'createController@creator');
 
 /*
  just for reference
