@@ -16,6 +16,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/members/member', function (){
+    return view('/members/member');
+});
+
 //debugging help
 Route::get('/debug', function() {
 
@@ -65,8 +69,8 @@ Route::get('/member', function(){
 //Belows Routing not working yet, returns a broken app "Whoops there was an error"
 
 //Route::controller('members/submit', 'createController');
-//Route::post('members/submit', 'createController@creator');
-
+Route::post('members/submit', 'createController@creator');
+Route::get('members/submit', 'createController@creator');
 /*
  just for reference
 Route::get('/users', function () {

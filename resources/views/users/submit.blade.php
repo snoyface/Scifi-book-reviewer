@@ -5,7 +5,7 @@
 
 @section('content')
 <div class='submission'>
-  <form action="submit" method='POST'>
+  <form action="/submit" method='POST'>
        <input type='hidden' name='_token' value='{{ csrf_token() }}'>
        <p>Title?<br> <input type="string" name="title"
           value="{{isset($request['title']) ? $request['title']: 'Title?'}}" /></p>

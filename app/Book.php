@@ -6,8 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
-  public function create($REQUEST) {
-    $book = new \App\Book();
+  public function create(Request $REQUEST) {
 
   # Set the parameters
   # Note how each parameter corresponds to a field in the table

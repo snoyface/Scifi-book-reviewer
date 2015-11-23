@@ -5,9 +5,6 @@
 footer{
   display: none;
 }
-.menu{
-  visibility: hidden;
-}
 </style>
 
 @stop
