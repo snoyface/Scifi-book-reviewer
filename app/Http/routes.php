@@ -68,9 +68,10 @@ Route::get('/member', function(){
 
 //Belows Routing not working yet, returns a broken app "Whoops there was an error"
 
-//Route::controller('members/submit', 'createController');
-Route::post('members/submit', 'createController@creator');
-Route::get('members/submit', 'createController@creator');
+Route::controller('submit', 'bookController');
+Route::post('submit', 'bookController@postCreator');
+Route::get('submit', 'bookController@postCreator');
+//Route::controller('members/submit', 'bookController@postCreator' );
 /*
  just for reference
 Route::get('/users', function () {

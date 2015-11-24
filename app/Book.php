@@ -14,6 +14,8 @@ class Book extends Model
     $auth = $request -> input('author');
     $sum = $request -> input('summary');
     
+  #create a new book with data submitted
+    $book = new \App\Book();
     $book->title = $title;
     $book->author = $auth;
     $book->summary = $sum;
