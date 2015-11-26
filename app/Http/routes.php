@@ -66,12 +66,18 @@ Route::get('/member', function(){
     return view('members/member');
 });
 
-//Belows Routing not working yet, returns a broken app "Whoops there was an error"
+#Belows Routing not working yet, returns a broken app "Whoops there was an error"
 
-Route::controller('submit', 'bookController');
-Route::post('submit', 'bookController@postCreator');
-Route::get('submit', 'bookController@postCreator');
-//Route::controller('members/submit', 'bookController@postCreator' );
+Route::post('/members/submit', 'BookController@create');
+
+//Route::controller('submit', 'bookController');
+//Route::post('/submit', 'BookController@create');
+//Route::get('/submit', 'BookController@create');
+//Route::controller('members/submit', 'BookController@create' );
+
+//Route::resource('submit', 'BookController');
+//Route::controller('/members/submit/create', 'Bookcontroller@create' );
+//Route::post('members/submit/create', 'BookController@create');
 /*
  just for reference
 Route::get('/users', function () {

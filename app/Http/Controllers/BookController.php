@@ -4,18 +4,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Session;
 
 class BookController extends Controller
 {
-   #created by Jonathan
-    public function postCreator (Request $request){
-            $book->create(Request);
-            return view('/thanks');
-    }
     
     public function index()
     {
-        //
+        $books = books::all();
+
+        // load the view and pass the nerds
+        return View::make('members/search')
+            ->with('books', $books);
     }
 
     /**
@@ -23,9 +23,23 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+  
+         $title = $request -> input('title');
+         $auth = $request -> input('author');
+         $sum = $request -> input('summary');
+        
+        #create a new book with data submitted
+        $book = new \App\Book();
+        $book->title = $title;
+        $book->author = $auth;
+        $book->summary = $sum;
+        
+        $book -> save();
+       
+        Session::flash('message', 'Successfully created book!');
+        return view('members/member');
     }
 
     /**
