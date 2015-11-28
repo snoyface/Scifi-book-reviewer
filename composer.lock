@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1d5605e793c8cadb81f9008538bac086",
-    "content-hash": "ba541980d01f312ebeb627148534cd6e",
+    "hash": "baa1dcbfe421ad9282cdcdfd71c515d0",
+    "content-hash": "2781915467e90328f4d76d11bc6605fc",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -742,6 +742,52 @@
                 "time"
             ],
             "time": "2015-11-04 20:07:17"
+        },
+        {
+            "name": "nicolaslopezj/searchable",
+            "version": "1.6.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nicolaslopezj/searchable.git",
+                "reference": "30453f6bf2b68f871c52ce3e5a613eccca9370aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nicolaslopezj/searchable/zipball/30453f6bf2b68f871c52ce3e5a613eccca9370aa",
+                "reference": "30453f6bf2b68f871c52ce3e5a613eccca9370aa",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "illuminate/database": "4.2.x|~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nicolaslopezj\\Searchable\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Lopez",
+                    "email": "nicolaslopezj@me.com"
+                }
+            ],
+            "description": "Eloquent model search trait.",
+            "keywords": [
+                "database",
+                "eloquent",
+                "laravel",
+                "model",
+                "search",
+                "searchable"
+            ],
+            "time": "2015-11-23 18:12:44"
         },
         {
             "name": "nikic/php-parser",
@@ -1754,6 +1800,51 @@
                 "dump"
             ],
             "time": "2015-11-18 13:41:01"
+        },
+        {
+            "name": "tom-lingham/searchy",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TomLingham/Laravel-Searchy.git",
+                "reference": "cdcb73b6974d05342059abc38ec5d11932a5125a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TomLingham/Laravel-Searchy/zipball/cdcb73b6974d05342059abc38ec5d11932a5125a",
+                "reference": "cdcb73b6974d05342059abc38ec5d11932a5125a",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "TomLingham": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tom Lingham",
+                    "email": "tjlingham@gmail.com"
+                }
+            ],
+            "description": "Laravel Searchy makes user driven searching easy with fuzzy search, basic string matching, Levenshtein Distance and more.",
+            "keywords": [
+                "fuzzy",
+                "laravel",
+                "search"
+            ],
+            "time": "2015-08-16 00:59:19"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -3026,51 +3117,6 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2015-11-18 13:41:01"
-        },
-        {
-            "name": "tom-lingham/searchy",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/TomLingham/Laravel-Searchy.git",
-                "reference": "cdcb73b6974d05342059abc38ec5d11932a5125a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/TomLingham/Laravel-Searchy/zipball/cdcb73b6974d05342059abc38ec5d11932a5125a",
-                "reference": "cdcb73b6974d05342059abc38ec5d11932a5125a",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": "5.*",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "phpspec/phpspec": "~2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "TomLingham": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tom Lingham",
-                    "email": "tjlingham@gmail.com"
-                }
-            ],
-            "description": "Laravel Searchy makes user driven searching easy with fuzzy search, basic string matching, Levenshtein Distance and more.",
-            "keywords": [
-                "fuzzy",
-                "laravel",
-                "search"
-            ],
-            "time": "2015-08-16 00:59:19"
         }
     ],
     "aliases": [],

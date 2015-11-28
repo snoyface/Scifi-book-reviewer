@@ -16,10 +16,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+/*
 Route::get('/members/member', function (){
     return view('/members/member');
 });
-
+*/
 //debugging help
 Route::get('/debug', function() {
 
@@ -61,12 +62,11 @@ Route::get('/submit', function(){
   return view('/members/submit');
 });
 
-Route::get('/member', function(){
-    
-    return view('members/member');
+Route::get('/members/member', function(){
+      $books = \App\Book::all();
+      return view('members/member')
+      ->with('books', $books);
 });
-
-#Belows Routing not working yet, returns a broken app "Whoops there was an error"
 
 Route::post('/members/submit', 'BookController@create');
 
@@ -123,3 +123,5 @@ Route::get('/confirm-login-worked', function() {
 Route:get('/search', function() {
     return view('members/search');
 });
+
+Route::post('/members/search', 'SearchController@create');

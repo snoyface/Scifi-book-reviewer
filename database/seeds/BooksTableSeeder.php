@@ -16,7 +16,7 @@ class BooksTableSeeder extends Seeder
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
         'title' => 'The Great Gatsby',
         'author' => 'F. Scott Fitzgerald',
-        'summary' => 'this book is a great book, well worth the overview'
+        'summary' => 'this book is a great book, well worth the overview',
     ]);
 
     DB::table('books')->insert([
@@ -24,7 +24,7 @@ class BooksTableSeeder extends Seeder
       'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
       'title' => 'A Fire in the Deep',
       'author' => 'Larry Niven',
-      'summary' => 'this book is a great book, well worth the read. space!'
+      'summary' => 'this book is a great book, well worth the read. space!',
       ]);
 
       DB::table('books')->insert([
@@ -32,7 +32,7 @@ class BooksTableSeeder extends Seeder
         'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
         'title' => 'Deepness in the Sky',
         'author' => 'Larry Niven',
-        'summary' => 'Space spiders, how cool is that?'
+        'summary' => 'Space spiders, how cool is that?',
         ]);
     }
 }

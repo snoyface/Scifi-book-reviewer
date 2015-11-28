@@ -14,13 +14,19 @@ class CommentsTableSeeder extends Seeder
       DB::table('comments')->insert([
       'created_at' => Carbon\Carbon::now()->toDateTimeString(),
       'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-      'comment' => 'This was a great book, I enjoyed it more than french toast',
+      'comment' => 'good',
       ]);
 
      DB::table('comments')->insert([
       'created_at' => Carbon\Carbon::now()->toDateTimeString(),
       'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
-      'comment' => 'Didnt care for it much, but you should try it',
+      'comment' => 'great',
+     ]);
+     
+     DB::table('comments')->insert([
+      'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+      'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+      'comment' => 'bad',
      ]);
     }
 }

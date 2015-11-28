@@ -11,7 +11,7 @@
           value="{{isset($request['title']) ? $request['title']: 'Title?'}}" /></p>
        <p>Author?<br> <input type="string" name="author"
           value="{{isset($request['author']) ? $request['author']: 'Author?'}}" /></p>
-       <p>Summary?<br> <input type="string" name="summary"
+       <p>Summary?<br> <input style="width:150px; height:50px;" type="string" name="summary"
           value="{{isset($request['summary']) ? $request['summary']: 'Summary?'}}" /></p>
        <p><input type="submit" /></p>
       </form>

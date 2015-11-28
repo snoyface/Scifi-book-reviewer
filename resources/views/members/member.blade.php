@@ -8,11 +8,21 @@
 
     <div class='contents'>
     <div class='title'>Scifi Book club Reviewer</div>
-	<ul id='mem_menu'>
-		<li><a href='/submit'>Submit a Book</a>  </li>
-		<li><a href='/search'>Search Books</a>  </li>
-		<li><a href='/myreviews'>Your Books Reviews</a>  </li>
-	</ul>  
+  <div id='allbooks'><p>
+    <?php
+    if(!$books->isEmpty()) {
+    // Output the books
+    foreach($books as $book) {
+    echo $book->title.'<br>';
+    }
+    }
+    else {
+    echo 'No books found yet';
+    }
+    ?>;;;;9m
+    
+  </p>
+  </div>
 	</div>
 </div>
 

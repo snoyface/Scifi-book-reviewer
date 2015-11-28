@@ -9,7 +9,6 @@ www.p4.cscie15.me
 ## Description
 Scifi Book club database. Allows you to create a user, view books, edit, delete, and comment on other reviews.
 
-
 ## Demo
 located here:
 
@@ -25,3 +24,6 @@ https://gist.github.com/evercode1/bc2cfc318bb49313b47f
 
 help from this tutorial:
 https://laraveltips.wordpress.com/2015/06/15/how-to-make-user-login-and-registration-laravel-5-1/
+
+Flash messages:
+https://github.com/plasticbrain/PhpFlashMessages

@@ -8,14 +8,15 @@ use Session;
 
 class BookController extends Controller
 {
-    
+
     public function index()
     {
-        $books = books::all();
+      $books = DB::table('books')->get();
 
-        // load the view and pass the nerds
-        return View::make('members/search')
-            ->with('books', $books);
+// Output the results
+      foreach ($books as $book) {
+      echo $book->title;
+      };
     }
 
     /**
@@ -25,19 +26,19 @@ class BookController extends Controller
      */
     public function create(Request $request)
     {
-  
+
          $title = $request -> input('title');
          $auth = $request -> input('author');
          $sum = $request -> input('summary');
-        
+
         #create a new book with data submitted
         $book = new \App\Book();
         $book->title = $title;
         $book->author = $auth;
         $book->summary = $sum;
-        
+
         $book -> save();
-       
+
         Session::flash('message', 'Successfully created book!');
         return view('members/member');
     }
