@@ -22,10 +22,10 @@
           <ul>
             @if(Auth::check())
               <li><a href='/'>Home</a></li>
-              <li><a href='/submit'>Add a book</a></li>
-              <li><a href='/search'>Search books</a></li>
+              <li><a href='/books/submit'>Add a book</a></li>
+              <li><a href='/books/search'>Search books</a></li>
+              <li><a href='/books/myreviews'>Your Books Reviews</a>  </li>
               <li><a href='/auth/logout'>Log out</a></li>
-              <li><a href='/myreviews'>Your Books Reviews</a>  </li>
             @else
               <li><a href='/'>Home</a></li>
               <li><a href='/auth/login'>Log in</a></li>

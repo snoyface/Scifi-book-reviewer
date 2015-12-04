@@ -5,7 +5,7 @@
 
 @section('content')
 
-<p>This page shows you all the books, best average rating first</p>
+<p>This page shows you all the books, best average rating first:</p>
 <?php
  if(!$books->isEmpty()){
     // Output the books

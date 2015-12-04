@@ -59,8 +59,8 @@ Route::get('/debug', function() {
 
 });
 
-Route::get('/submit', function(){
 
+Route::get('books/submit', function(){
   return view('/books/submit');
 });
 
@@ -103,10 +103,11 @@ Route::get('/confirm-login-worked', function() {
 });
 
 //setup search
+/*
 Route:get('/search', function() {
     return view('books/search');
 });
-
+*/
 Route::get('/search/rating', function() {
     $books = \App\Book::all();
     $ratings = \App\Rating::all();

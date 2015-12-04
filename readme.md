@@ -27,3 +27,6 @@ https://laraveltips.wordpress.com/2015/06/15/how-to-make-user-login-and-registra
 
 Flash messages:
 https://github.com/plasticbrain/PhpFlashMessages
+
+Laravel 5 tips:
+https://laraveltips.wordpress.com/category/restful-controller-laravel-5-1/

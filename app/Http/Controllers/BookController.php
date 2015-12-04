@@ -40,7 +40,7 @@ class BookController extends Controller
         $book -> save();
 
         Session::flash('message', 'Successfully created book!');
-        return view('books/member');
+        return view('books/submit');
     }
 
     /**
@@ -62,9 +62,9 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        $books = Widget::findOrFail($id);
-
-        return view('$books.show', compact('$books'));
+        $books = \App\Book::where('id','=','$id')->get();
+        return view('books/book')
+         ->with('books', $books);
     }
 
     /**

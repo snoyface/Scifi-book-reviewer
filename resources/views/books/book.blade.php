@@ -4,16 +4,15 @@
 @stop
 
 @section('content')
-<?php
+
        
-       echo 'title: ' .$books->title.'<br>';
-       // echo 'title: ' .$books['title'];
-/*        echo '<br>';
+<h2>{{ $book->title }}</h2>
+      
+
+@stop
+echo '<br>';
         echo 'author: '.$books['author'];
         echo '<br>';
         echo 'summary: '.$books['summary'];
         echo '<br>';
         echo 'eventually, put rating here';
-*/
-?>
-@stop

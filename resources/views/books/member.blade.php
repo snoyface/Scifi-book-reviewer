@@ -16,7 +16,7 @@
     if(!$books->isEmpty()) {
     // Output the books
     foreach($books as $book) {
-    echo '<a href= /members/book/'.$book['id'] . '>' .$book['title'] . '</a><br>';   
+    echo '<a href= /books/'.$book['id'] . '>' .$book['title'] . '</a><br>';   
     }}else {
     echo 'No books found yet';
     };
