@@ -10,16 +10,17 @@
     <div class='title'>Scifi Book club Reviewer</div>
   <div id='allbooks'><p>
     <?php
+    echo 'Current books in database <br>';
+    echo'<br>';
+    
     if(!$books->isEmpty()) {
     // Output the books
     foreach($books as $book) {
-    echo $book->title.'<br>';
-    }
-    }
-    else {
+    echo '<a href= /members/book/'.$book['id'] . '>' .$book['title'] . '</a><br>';   
+    }}else {
     echo 'No books found yet';
-    }
-    ?>;;;;9m
+    };
+    ?>
     
   </p>
   </div>

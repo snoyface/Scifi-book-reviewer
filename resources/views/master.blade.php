@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Developers Best Friend</title>
+        <title>Scifi Book Reviewer</title>
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
         @yield('styles')
         <link rel="stylesheet" href="/css/styles.css">
@@ -25,11 +25,12 @@
               <li><a href='/submit'>Add a book</a></li>
               <li><a href='/search'>Search books</a></li>
               <li><a href='/auth/logout'>Log out</a></li>
+              <li><a href='/myreviews'>Your Books Reviews</a>  </li>
             @else
               <li><a href='/'>Home</a></li>
               <li><a href='/auth/login'>Log in</a></li>
               <li><a href='/auth/register'>Register</a></li>
-              <li><a href='/myreviews'>Your Books Reviews</a>  </li>
+              
         @endif
         </ul>
       </nav>

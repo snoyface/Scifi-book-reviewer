@@ -40,7 +40,7 @@ class BookController extends Controller
         $book -> save();
 
         Session::flash('message', 'Successfully created book!');
-        return view('members/member');
+        return view('books/member');
     }
 
     /**
@@ -62,7 +62,9 @@ class BookController extends Controller
      */
     public function show($id)
     {
-        //
+        $books = Widget::findOrFail($id);
+
+        return view('$books.show', compact('$books'));
     }
 
     /**
@@ -97,5 +99,47 @@ class BookController extends Controller
     public function destroy($id)
     {
         //
+    }
+    
+    public function search(Request $request)
+    {
+        $this->validate($request, [
+       'title' => 'required|alpha_num|max:20',
+        ]);
+
+        $searchterm = $request->title;
+
+        $results = \App\Book::where('title', 'LIKE', '%'. $searchterm .'%')
+             ->get();
+
+       if (count($results) > 0){
+
+            $count = count($results);
+
+           //php artisan config:cache return view('/search', compact('results', 'count'));
+       
+        }
+
+       return view('/search')->with('message', ['Sorry, no results!']);
+
+    }
+    
+    public function ratingSearch()
+    {
+        $books = \App\Book::with('ratings')->get();
+
+         foreach($books as $book) {
+            echo '<br>'.$book->title.' has a rating of';
+            $mean = 0;
+            $i = 0;
+            $rate = 0;
+                foreach($book->rating as $rating) {
+                    $mean = $mean + $rating;
+                    $i++;
+                }
+            
+            $rate = $mean / $i;
+            echo ' has a rating of ' + $rate;
+         }
     }
 }

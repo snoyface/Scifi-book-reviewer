@@ -13,29 +13,28 @@ class BookCommentTableSeeder extends Seeder
     {
         
 
-    # First, create an array of all the books we want to associate tags with
-    # The *key* will be the book title, and the *value* will be an array of tags.
-    $books =[
-        'The Great Gatsby' => ['good', 'great'],
-        'A Fire in the Deep' => ['great', 'bad'],
-        'Deepness in the Sky' => ['good','great','bad']
-    ];
-
-    # Now loop through the above array, creating a new pivot for each book to tag
-    foreach($books as $title => $tags) {
-
+        # First, create an array of all the books we want to associate comments with
+        # The *key* will be the book title, and the *value* will be an array of comments.
+        $books =[
+            'The Great Gatsby' => ['good', 'great'],
+            'A Fire in the Deep' => ['great', 'bad'],
+            'Deepness in the Sky' => ['good','great','bad']
+        ];
+    
+        # Now loop through the above array, creating a new pivot for each book to comment
+        foreach($books as $title => $comment) {
+    
         # First get the book
         $book = \App\Book::where('title','like',$title)->first();
-
-        # Now loop through each tag for this book, adding the pivot
-        foreach($tags as $tagName) {
-            $tag = \App\Tag::where('name','LIKE',$tagName)->first();
-
-            # Connect this tag to this book
-            $book->tags()->save($tag);
+    
+        # Now loop through each comment for this book, adding the pivot
+        foreach($comment as $commentName) {
+         $comment = \App\Comment::where('comment','LIKE',$commentName)->first();
+    
+                # Connect this comment to this book
+                $book->comments()->save($comment);
+        }
         }
 
-    }
-}
     }
 }

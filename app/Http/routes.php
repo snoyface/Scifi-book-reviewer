@@ -13,14 +13,16 @@
 
 //starting page
 Route::get('/', function () {
-    return view('welcome');
+    $user = Auth::user();
+    if($user) {
+        $books = \App\Book::all();
+        return view('/books/member')
+        ->with('books', $books);
+    } else {
+        return view('welcome');
+    }; 
 });
 
-/*
-Route::get('/members/member', function (){
-    return view('/members/member');
-});
-*/
 //debugging help
 Route::get('/debug', function() {
 
@@ -59,36 +61,17 @@ Route::get('/debug', function() {
 
 Route::get('/submit', function(){
 
-  return view('/members/submit');
+  return view('/books/submit');
 });
 
-Route::get('/members/member', function(){
+Route::get('/books/member', function(){
       $books = \App\Book::all();
-      return view('members/member')
+      return view('books/member')
       ->with('books', $books);
 });
 
-Route::post('/members/submit', 'BookController@create');
+Route::post('/books/submit', 'BookController@create');
 
-//Route::controller('submit', 'bookController');
-//Route::post('/submit', 'BookController@create');
-//Route::get('/submit', 'BookController@create');
-//Route::controller('members/submit', 'BookController@create' );
-
-//Route::resource('submit', 'BookController');
-//Route::controller('/members/submit/create', 'Bookcontroller@create' );
-//Route::post('members/submit/create', 'BookController@create');
-/*
- just for reference
-Route::get('/users', function () {
-	return view('users');
-});
-
-//lorem controller and routing
-Route::controller('lorem','loremController');
-Route::post('/lorem', 'loremController@generator');
-
-*/
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -121,7 +104,29 @@ Route::get('/confirm-login-worked', function() {
 
 //setup search
 Route:get('/search', function() {
-    return view('members/search');
+    return view('books/search');
 });
 
-Route::post('/members/search', 'SearchController@create');
+Route::get('/search/rating', function() {
+    $books = \App\Book::all();
+    $ratings = \App\Rating::all();
+    return view('books/search/rating') 
+          ->with('books', $books)
+          ->with('ratings', $ratings);
+});
+/*
+Route::get('/books/book/{id}', 'BookController@show');
+
+Route::get('/books/book/{id}', function(){
+    $books = \App\Book::where('id','=','{id}')->get();
+    //$ratings = \App\Rating::all();
+    //$comments = \App\Comment::all();
+    return view('books/book') 
+          ->with('books', $books);
+         // ->with('ratings', $ratings)
+         // ->with('comments', $comments); 
+});
+*/
+
+Route::resource('/books', 'BookController');
+Route::post('books/search', 'BookController@search');
