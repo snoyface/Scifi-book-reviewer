@@ -16,5 +16,24 @@
        <p><input type="submit" /></p>
       </form>
 </div>
+@if( isset($request))
+              You Submitted:
+              <br>
+              {{ $request['title'] }}
+              <br>
+              {{ $request['author'] }}
+              <br>
+              {{ $request['summary'] }}
+              @endif
+
+            @if (count($errors) > 0)
+            <div class="alert alert-danger">
+              <ul>
+                @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                @endforeach
+              </ul>
+            </div>
+            @endif
 
 @stop

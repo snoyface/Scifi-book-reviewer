@@ -60,11 +60,11 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id = null)
     {
-        $books = \App\Book::where('id','=','$id')->get();
+        $book = \App\Book::where('id',$id)->first();
         return view('books/book')
-         ->with('books', $books);
+         ->with('book', $book);
     }
 
     /**
@@ -100,7 +100,7 @@ class BookController extends Controller
     {
         //
     }
-    
+
     public function search(Request $request)
     {
         $this->validate($request, [
@@ -117,13 +117,13 @@ class BookController extends Controller
             $count = count($results);
 
            //php artisan config:cache return view('/search', compact('results', 'count'));
-       
+
         }
 
        return view('/search')->with('message', ['Sorry, no results!']);
 
     }
-    
+
     public function ratingSearch()
     {
         $books = \App\Book::with('ratings')->get();
@@ -137,7 +137,7 @@ class BookController extends Controller
                     $mean = $mean + $rating;
                     $i++;
                 }
-            
+
             $rate = $mean / $i;
             echo ' has a rating of ' + $rate;
          }

@@ -20,7 +20,7 @@ Route::get('/', function () {
         ->with('books', $books);
     } else {
         return view('welcome');
-    }; 
+    };
 });
 
 //debugging help
@@ -111,23 +111,23 @@ Route:get('/search', function() {
 Route::get('/search/rating', function() {
     $books = \App\Book::all();
     $ratings = \App\Rating::all();
-    return view('books/search/rating') 
+    return view('books/search/rating')
           ->with('books', $books)
           ->with('ratings', $ratings);
 });
-/*
-Route::get('/books/book/{id}', 'BookController@show');
 
+//Route::get('/books/{id?}', 'BookController@show');
+/*
 Route::get('/books/book/{id}', function(){
-    $books = \App\Book::where('id','=','{id}')->get();
+    $book = \App\Book::where('id','=',{id})->get();
     //$ratings = \App\Rating::all();
     //$comments = \App\Comment::all();
-    return view('books/book') 
-          ->with('books', $books);
+    return view('books/book')
+          ->with('books', $book);
          // ->with('ratings', $ratings)
-         // ->with('comments', $comments); 
+         // ->with('comments', $comments);
 });
 */
 
-Route::resource('/books', 'BookController');
+Route::resource('books', 'BookController');
 Route::post('books/search', 'BookController@search');
