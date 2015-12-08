@@ -12,14 +12,14 @@ class UserCommentTableSeeder extends Seeder
     public function run()
     {
       $users =[
-          '1' => ['good', 'great'],
-          '2' => ['great', 'bad', 'bad','great'],
-          '3' => ['good','great','bad']
+          'Jill' => ['good', 'great'],
+          'Jamal' => ['great', 'bad', 'bad','great'],
+          'Jon macleod' => ['good','great','bad']
       ];
-      foreach($users as $id => $comment) {
+      foreach($users as $name => $comment) {
 
       # First get the user
-      $book = \App\Book::where('id','like',$id)->first();
+      $user = \App\User::where('name','like',$name)->first();
 
       # Now loop through each comment for this user, adding the pivot
         foreach($comment as $commentName) {
