@@ -11,22 +11,26 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-    $user = \App\User::firstOrCreate(['email' => 'jill@harvard.edu']);
-    $user->name = 'Jill';
-    $user->email = 'jill@harvard.edu';
-    $user->password = \Hash::make('helloworld');
-    $user->save();
-
-    $user = \App\User::firstOrCreate(['email' => 'jamal@harvard.edu']);
-    $user->name = 'Jamal';
-    $user->email = 'jamal@harvard.edu';
-    $user->password = \Hash::make('helloworld');
-    $user->save();
-
-    $user = \App\User::firstOrCreate(['email' => 'snoyface@yahoo.com']);
-    $user->name = 'jon macleod';
-    $user->email = 'snoyface@yahoo.com';
-    $user->password = \Hash::make('doelcam');
-    $user->save();
-    }
+      DB::table('users')->insert([
+      'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+      'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+      'name' => 'Jill',
+      'email' => 'jill@harvard.edu',
+      'password' => \Hash::make('helloworld'),
+   ]);
+      DB::table('users')->insert([
+      'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+      'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+      'name' => 'Jamal',
+      'email' => 'jamal@harvard.edu',
+      'password' => \Hash::make('helloworld'),
+   ]);
+   DB::table('users')->insert([
+      'created_at' => Carbon\Carbon::now()->toDateTimeString(),
+      'updated_at' => Carbon\Carbon::now()->toDateTimeString(),
+      'name' => 'Jon macleod',
+      'email' => 'snoyface@yahoo.com',
+      'password' => \Hash::make('helloworld'),
+   ]);
+  }
 }

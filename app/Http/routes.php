@@ -23,6 +23,9 @@ Route::get('/', function () {
     };
 });
 
+//view logs
+Route::get('/logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+
 //debugging help
 Route::get('/debug', function() {
 
@@ -130,4 +133,5 @@ Route::get('/books/book/{id}', function(){
 */
 
 Route::resource('books', 'BookController');
+Route::resource('book', 'BookController');
 Route::post('books/search', 'BookController@search');

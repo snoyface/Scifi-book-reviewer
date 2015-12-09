@@ -18,9 +18,9 @@ class DatabaseSeeder extends Seeder
           $this->call(CommentsTableSeeder::class);
           $this->call(BookCommentTableSeeder::class);
           $this->call(BookUserTableSeeder::class);
-          $this->call(UserCommentTableSeeder::class);
           $this->call(RatingTableSeeder::class);
           $this->call(BookRatingTableSeeder::class);
+          $this->call(UserCommentTableSeeder::class);
         Model::reguard();
     }
 }

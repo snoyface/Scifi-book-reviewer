@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Session;
+use Input;
+use Form;
 
 class BookController extends Controller
 {
@@ -75,7 +77,10 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        //
+        $book = \App\Book::findOrFail($id);
+
+        return view('books.edit')
+            -> with('book', $book);
     }
 
     /**
@@ -87,7 +92,18 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+       'title' => 'required|unique:book|alpha_num|max:20',
+
+        ]);
+        $book = \App\Book::findOrFail($id);
+        $book->update(['title' => $request->title]);
+        $book->update(['author' => $request->author]);
+        $book->update(['summary' => $request->summary]);
+
+
+        return view('books/book')
+         ->with('book', $book);
     }
 
     /**
@@ -98,7 +114,8 @@ class BookController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Book::destroy($id);
+        return view('/');
     }
 
     public function search(Request $request)
