@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Session;
 use Input;
 use Form;
+use App\User;
 
 class BookController extends Controller
 {
@@ -42,7 +43,7 @@ class BookController extends Controller
         $book -> save();
 
         Session::flash('message', 'Successfully created book!');
-        return view('books/submit');
+        return view('books/member');
     }
 
     /**
@@ -65,6 +66,7 @@ class BookController extends Controller
     public function show($id = null)
     {
         $book = \App\Book::where('id',$id)->first();
+        dump($book);
         return view('books/book')
          ->with('book', $book);
     }
@@ -102,8 +104,9 @@ class BookController extends Controller
         $book->update(['summary' => $request->summary]);
 
 
-        return view('books/book')
-         ->with('book', $book);
+        return view('books/member')
+         ->with('book', $book)
+         ->with('message', ['Book updated!']);
     }
 
     /**
@@ -158,5 +161,22 @@ class BookController extends Controller
             $rate = $mean / $i;
             echo ' has a rating of ' + $rate;
          }
+    }
+    public function edited(Request $request){
+    //     $this->validate($request, [
+    //    'title' => 'required|unique:book|alpha_num|max:20',
+
+    //     ]);
+        // $book = \App\Book::findOrFail($request->id);
+        // $book->update(['title' => $request->title]);
+        // $book->update(['author' => $request->author]);
+        // $book->update(['summary' => $request->summary]);
+        
+         $book = \App\Book::findOrFail($request->id);
+        $book->title = $request->title;
+        $book->save();
+        return view('books/member')
+         #->with('book', $book)
+         ->with('message', ['Book updated!']);
     }
 }

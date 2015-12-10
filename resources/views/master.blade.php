@@ -36,7 +36,10 @@
       </nav>
 
         @yield('content')
-
+        
+        @if(Session::get('flash_message') != null))
+        <div class='flash_message'>{{ Session::get('flash_message') }}</div>
+        @endif
       <footer>
         @yield('footer')
         <a href={{ URL::previous() }}>Reload</a>

@@ -9,7 +9,11 @@
     <div class='contents'>
     <div class='title'>Scifi Book club Reviewer</div>
   <div id='allbooks'><p>
+    @if
     <?php
+   # $user = 
+   # echo 'Welcome' .$user['name'];
+   # echo'<br>';
     echo 'Current books in database <br>';
     echo'<br>';
     

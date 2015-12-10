@@ -135,3 +135,4 @@ Route::get('/books/book/{id}', function(){
 Route::resource('books', 'BookController');
 Route::resource('book', 'BookController');
 Route::post('books/search', 'BookController@search');
+Route::post('books/edit/submit', 'BookController@edited');

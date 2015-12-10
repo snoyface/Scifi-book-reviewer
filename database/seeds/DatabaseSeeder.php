@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
           $this->call(BookUserTableSeeder::class);
           $this->call(RatingTableSeeder::class);
           $this->call(BookRatingTableSeeder::class);
-          $this->call(UserCommentTableSeeder::class);
+          $this->call(CommentUserTableSeeder::class);
         Model::reguard();
     }
 }
