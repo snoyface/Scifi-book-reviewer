@@ -25,7 +25,7 @@
     if(!$results->isEmpty()) {
     // Output the books
     foreach($results as $book) {
-    echo '<a href= /books/book/'.$book['id'] . '>' .$book['title'] . '</a><br>';   
+    echo '<a href= /books/'.$book['id'] . '>' .$book['title'] . '</a><br>';   
     }}else {
     echo 'No books found for your search I guess. Try again';
     };
