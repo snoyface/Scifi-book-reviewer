@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Redirect;
 use Session;
 use Input;
 use Form;
@@ -67,7 +68,6 @@ class BookController extends Controller
     public function show($id = null)
     {
         $book = \App\Book::where('id',$id)->first();
-        dump($book);
         return view('books/book')
          ->with('book', $book);
     }
@@ -87,40 +87,12 @@ class BookController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        $this->validate($request, [
-       'title' => 'required|unique:book|alpha_num|max:20',
-
-        ]);
-        $book = \App\Book::findOrFail($id);
-        $book->update(['title' => $request->title]);
-        $book->update(['author' => $request->author]);
-        $book->update(['summary' => $request->summary]);
-
-
-        return view('books/member')
-         ->with('book', $book)
-         ->with('message', ['Book updated!']);
-    }
-
-    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        Book::destroy($id);
-        return view('/');
-    }
+
 
     public function search(Request $request)
     {
@@ -165,20 +137,74 @@ class BookController extends Controller
          }
     }
     public function edited(Request $request){
-    //     $this->validate($request, [
-    //    'title' => 'required|unique:book|alpha_num|max:20',
-
-    //     ]);
-        // $book = \App\Book::findOrFail($request->id);
-        // $book->update(['title' => $request->title]);
-        // $book->update(['author' => $request->author]);
-        // $book->update(['summary' => $request->summary]);
         
          $book = \App\Book::findOrFail($request->id);
         $book->title = $request->title;
+        $book->author = $request->author;
+        $book->summary = $request->summary;
         $book->save();
+        $books = \App\Book::all();
         return view('books/member')
-         #->with('book', $book)
-         ->with('message', ['Book updated!']);
+         ->with('books', $books);
+    }
+    
+    public function comment(Request $request, $id)
+    {
+        $book = \App\Book::findOrFail($id);
+        $commented = $request -> input('comment');
+        $comment = new \App\Comment();
+        $comment -> comment = $commented;
+        $comment ->save();
+        $book->comments()->attach($comment);
+        
+        return Redirect::back();
+    }
+    
+    //     public function delete($id)
+    // {
+    //     $book = \App\Book::findOrFail($id);
+    //     $book::destroy($id);
+    //     Session::flash('message', 'Successfully deleted book!');
+    //     $books = \App\Book::all();
+    //     return view('/books/member')
+    //     ->with('books', $books);
+        
+    // }
+    
+    public function getConfirmDelete($id) {
+
+    $book = \App\Book::find($id);
+
+    return view('books.delete')->with('book', $book);
+    }
+
+    public function delete($id) {
+
+        # Get the book to be deleted
+        $book = \App\Book::find($id);
+
+        if(is_null($book)) {
+        Session::flash('flash_message','Book not found.');
+        return redirect('/');
+        }
+
+        # First remove any tags associated with this book
+        if($book->comments()) {
+            $book->comments()->detach();
+         }   
+          if($book->users()) {
+             $book->users()->detach();
+          }
+          if($book->ratings()) {
+             $book->ratings()->detach();
+          }
+
+    # Then delete the book
+        $book->delete();
+
+    # Done
+        Session::flash('flash_message',$book->title.' was deleted.');
+    return redirect('/');
+
     }
 }

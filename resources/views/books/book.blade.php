@@ -17,12 +17,11 @@
 <h2>Comments</h2>
  <?php
 foreach($book->comments as $comment) {
-    dump($comment);
-        
-        echo $comment->comment.'<br>';
+  
+        echo $comment->comment.'<br><br>';
 };
 ?>
- <form action='book/{id}' method='POST'>
+ <form action='/books/{{$book->id}}' method='POST'>
        <input type='hidden' name='_token' value='{{ csrf_token() }}'>
        <p>Comment?<br> <input type="string" name="comment"
           value="{{isset($request['comment']) ? $request['comment']: 'comment?'}}" /></p>
@@ -31,8 +30,8 @@ foreach($book->comments as $comment) {
  
  <td>  <a href="/books/{{ $book->id }}/edit">
                             <button type="button" class="btn btn-default">Edit </button> </a> </td>
-                    <td>  <a href="/books/{{ $book->id }}/delete">
-                            <button type="button" class="btn btn-default">delete </button> </a> </td>
+<td>  <a href="/books/{{ $book->id }}/confirm_delete">
+                            <button type="button" class="btn btn-default">Delete </button> </a> </td>
  
  
 @stop

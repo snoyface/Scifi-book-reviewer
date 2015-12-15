@@ -23,6 +23,7 @@
     echo 'No books found yet';
     };   
     ?>
+    
   </p>
   </div>
 	</div>

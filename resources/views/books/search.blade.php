@@ -35,9 +35,5 @@
 
 @else
 
-<ul id='searchmenu'>
-  <li><a href='/search/rating'>view by rating</a></li>
-  <li><a href='/search/author'>view by author</a></li>
-</ul>
 @endif
 @stop

@@ -117,3 +117,6 @@ Route::resource('books', 'BookController');
 Route::resource('book', 'BookController');
 Route::post('/books/search', 'BookController@search');
 Route::post('/books/edit/submit', 'BookController@edited');
+Route::post('/books/{id}', 'BookController@comment');
+Route::get('/books/{id}/delete', 'BookController@delete');
+Route::get('/books/{id?}/confirm_delete/', 'BookController@getConfirmDelete');

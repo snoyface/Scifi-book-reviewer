@@ -24,7 +24,6 @@
               <li><a href='/'>Home</a></li>
               <li><a href='/books/submit'>Add a book</a></li>
               <li><a href='/books/search'>Search books</a></li>
-              <li><a href='/books/myreviews'>Your Books Reviews</a>  </li>
               <li><a href='/auth/logout'>Log out</a></li>
             @else
               <li><a href='/'>Home</a></li>
@@ -44,7 +43,6 @@
         @yield('footer')
         <a href={{ URL::previous() }}>Reload</a>
         <br>
-        <a href='/'>Back to Homepage</a>
       </footer>
     </div>
   </body>
