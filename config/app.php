@@ -136,10 +136,11 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         TomLingham\Searchy\SearchyServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
-        Collective\Html\HtmlServiceProvider,
+        Collective\Html\HtmlServiceProvider::class,
+        Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        //Barryvdh\Debugbar\ServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -198,11 +199,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
         'Searchy' => TomLingham\Searchy\Facades\Searchy::class,
-        'Form'=>    Illuminate\Html\FormFacade,
-        'HTML'=>    Illuminate\Html\HtmlFacade,
-        'Form' => 'Collective\Html\FormFacade',
-        'Html' => 'Collective\Html\HtmlFacade',
-
+        'Debugbar' => Barryvdh\Debugbar\Facade::class,
+        'Form'=>    Illuminate\Html\FormFacade::class,
+        'HTML'=>    Illuminate\Html\HtmlFacade::class,       
     ],
 
 ];

@@ -5,6 +5,9 @@
 footer{
   display: none;
 }
+nav{
+  display:none;
+}
 </style>
 
 @stop

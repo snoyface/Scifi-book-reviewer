@@ -13,7 +13,8 @@
         "rap2hpoutre/laravel-log-viewer": "^0.4.3",
         "illuminate/html": "5.*",
         "laravie/html": "^5.1",
-        "laravelcollective/html": "~5.0"
+        "laravelcollective/html": "~5.0",
+        "barryvdh/laravel-debugbar": "^2.0"
             },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

@@ -12,9 +12,9 @@ class CommentUserTableSeeder extends Seeder
     public function run()
     {
       $users =[
-          'Jill' => ['good', 'great'],
-          'Jamal' => ['great', 'bad', 'bad','great'],
-          'Jon macleod' => ['good','great','bad']
+          'Jill' => [ 'great'],
+          'Jamal' => [ 'bad',],
+          'Jon macleod' => ['good',]
       ];
       foreach($users as $name => $comment) {
 

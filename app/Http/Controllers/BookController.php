@@ -41,9 +41,10 @@ class BookController extends Controller
         $book->summary = $sum;
 
         $book -> save();
-
         Session::flash('message', 'Successfully created book!');
-        return view('books/member');
+        $books = \App\Book::all();
+        return view('/books/member')
+        ->with('books', $books);
     }
 
     /**
@@ -136,11 +137,12 @@ class BookController extends Controller
 
             $count = count($results);
 
-           //php artisan config:cache return view('/search', compact('results', 'count'));
+           
+           return view('/books/search', compact('results', 'count'));
 
         }
 
-       return view('/search')->with('message', ['Sorry, no results!']);
+       return view('/books/search')->with('message', ['Sorry, no results!']);
 
     }
 

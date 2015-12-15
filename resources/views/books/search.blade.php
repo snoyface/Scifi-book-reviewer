@@ -8,7 +8,7 @@
 <p>This page will allow you to search for a particular book</p>
 
 <div class='search'>
-  <form action='books/search' method='POST'>
+  <form action='/books/search' method='POST'>
        <input type='hidden' name='_token' value='{{ csrf_token() }}'>
        <p>What book are you looking for?<br> <input type="string" name="title"
           value="{{isset($request['title']) ? $request['title']: 'Title?'}}" /></p>
@@ -19,15 +19,15 @@
 @if(isset($results))
 <div id='abook'><p>
     <?php
-    echo 'Your searched book results: <br>';
+    echo 'Your search results: <br>';
     echo'<br>';
     
-    if(!$books->isEmpty()) {
+    if(!$results->isEmpty()) {
     // Output the books
-    foreach($books as $book) {
+    foreach($results as $book) {
     echo '<a href= /books/book/'.$book['id'] . '>' .$book['title'] . '</a><br>';   
     }}else {
-    echo 'No books found for that title';
+    echo 'No books found for your search I guess. Try again';
     };
     ?>
     

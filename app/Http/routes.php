@@ -38,14 +38,6 @@ Route::get('/debug', function() {
     if(config('app.debug')) echo "Yes"; else echo "No";
 
     echo '<h1>Database Config</h1>';
-    /*
-    The following line will output your MySQL credentials.
-    Uncomment it only if you're having a hard time connecting to the database and you
-    need to confirm your credentials.
-    When you're done debugging, comment it back out so you don't accidentally leave it
-    running on your live server, making your credentials public.
-    */
-    //print_r(config('database.connections.mysql'));
 
     echo '<h1>Test Database Connection</h1>';
     try {
@@ -69,8 +61,8 @@ Route::get('books/submit', function(){
 
 Route::get('/books/member', function(){
       $books = \App\Book::all();
-      return view('books/member')
-      ->with('books', $books);
+      session(['books'=>$books]);
+      return view('/books/members');
 });
 
 Route::post('/books/submit', 'BookController@create');
@@ -106,11 +98,13 @@ Route::get('/confirm-login-worked', function() {
 });
 
 //setup search
-/*
-Route:get('/search', function() {
-    return view('books/search');
+
+Route:get('/books/search', function() {
+    $books = \App\Book::all();
+    return view('books/search')
+    ->with('books', $books);
 });
-*/
+
 Route::get('/search/rating', function() {
     $books = \App\Book::all();
     $ratings = \App\Rating::all();
@@ -119,20 +113,7 @@ Route::get('/search/rating', function() {
           ->with('ratings', $ratings);
 });
 
-//Route::get('/books/{id?}', 'BookController@show');
-/*
-Route::get('/books/book/{id}', function(){
-    $book = \App\Book::where('id','=',{id})->get();
-    //$ratings = \App\Rating::all();
-    //$comments = \App\Comment::all();
-    return view('books/book')
-          ->with('books', $book);
-         // ->with('ratings', $ratings)
-         // ->with('comments', $comments);
-});
-*/
-
 Route::resource('books', 'BookController');
 Route::resource('book', 'BookController');
-Route::post('books/search', 'BookController@search');
-Route::post('books/edit/submit', 'BookController@edited');
+Route::post('/books/search', 'BookController@search');
+Route::post('/books/edit/submit', 'BookController@edited');
