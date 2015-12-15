@@ -17,11 +17,9 @@
 <h2>Comments</h2>
  <?php
 foreach($book->comments as $comment) {
-        $users = $comment->users; 
-        dump($users);
-       // echo $user->name.'commented :';
-   
-    echo $comment->comment.'<br> ';
+    dump($comment);
+        
+        echo $comment->comment.'<br>';
 };
 ?>
  <form action='book/{id}' method='POST'>
