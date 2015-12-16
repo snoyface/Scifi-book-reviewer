@@ -7,13 +7,15 @@ csci e-15 harvard class project 4
 www.p4.cscie15.me
 
 ## Description
-Scifi Book club database. Allows you to create a user, view books, edit, delete, and comment on other reviews.
+Scifi Book club database. 
+Allows you to create a user, view books, edit, delete, and comment on other reviews.
+Future devlopment will bring a rating system via table.
 
 ## Demo
-located here:
+located here: 
 
 ## Details for teaching team
-No login required, just load the page and make your password!
+
 
 ## Outside code
 Register gist:
@@ -30,3 +32,5 @@ https://github.com/plasticbrain/PhpFlashMessages
 
 Laravel 5 tips:
 https://laraveltips.wordpress.com/category/restful-controller-laravel-5-1/
+
+...and of course, all the teachers and TA' help. Thanks!
