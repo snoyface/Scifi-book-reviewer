@@ -32,7 +32,7 @@ nav{
         <div id='login_raygun'>
           <p>To login, click the ray gun</p>
           <a href='/auth/login'>
-            <img id='raygun' src='/images/raygun.jpg'
+            <img id='raygun' src='/images/ray_gun.jpg'
               alt='login'>
         </div>
     </div>

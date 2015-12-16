@@ -160,35 +160,22 @@ class BookController extends Controller
         return Redirect::back();
     }
     
-    //     public function delete($id)
-    // {
-    //     $book = \App\Book::findOrFail($id);
-    //     $book::destroy($id);
-    //     Session::flash('message', 'Successfully deleted book!');
-    //     $books = \App\Book::all();
-    //     return view('/books/member')
-    //     ->with('books', $books);
-        
-    // }
-    
     public function getConfirmDelete($id) {
 
     $book = \App\Book::find($id);
 
-    return view('books.delete')->with('book', $book);
+    return view('books/delete')->with('book', $book);
     }
 
     public function delete($id) {
-
-        # Get the book to be deleted
+        
         $book = \App\Book::find($id);
 
         if(is_null($book)) {
         Session::flash('flash_message','Book not found.');
         return redirect('/');
         }
-
-        # First remove any tags associated with this book
+        
         if($book->comments()) {
             $book->comments()->detach();
          }   
@@ -199,10 +186,7 @@ class BookController extends Controller
              $book->ratings()->detach();
           }
 
-    # Then delete the book
         $book->delete();
-
-    # Done
         Session::flash('flash_message',$book->title.' was deleted.');
     return redirect('/');
 

@@ -3,13 +3,18 @@ html, body {
       }
 
 body {
+      /*text-align:center;*/
       margin: 50px;
-      padding: 0;
       width: 90%;
       display: table;
       font-weight: 100;
-      font-family: 'Lato';
+      font-family: "Arial";
       margin: auto;
+      background: url('/images/b/rotate.php') no-repeat center top;
+      background-color: black;
+      color: black;
+      text-shadow: antiquewhite;
+      background-size: cover;
       }
 
 footer{
@@ -19,39 +24,41 @@ footer{
 }
 
 .container {
-      margin: auto;
+      width: 800px;
+      margin: 0 auto; 
       }
 
 #logo {
       width: 500px;
       height: 200px;
+      margin: auto;
       }
 
 #create_spaceship {
-    width: 70px;
-    height: 150px;
-    float: left;
-    position: relative;
-    padding-left: 200px;
-    margin-bottom: 20px;
+    /*width: 70px;
+    height: 150px;*/
+    /*float: left;*/
+    float:left;
+    text-align:center;
+}
+
+#login_raygun {
+  /*width: 70px;
+  height: 170px;*/
+  float:right;
+  text-align:center;
 }
 
 #rocket {
     width: 70px;
-    height: 150px;
-}
-
-#login_raygun {
-  width: 70px;
-  height: 150px;
-  float: left;
-  position: relative;
-  padding: 20px;
+    height: 170px;
+    margin: 0;
 }
 
 #raygun {
-  width: 160px;
+  width: 180px;
   height: 150px;
+  margin: 0;
 }
 
 ul {
@@ -70,3 +77,15 @@ a {
     display: block;
     width: 150px;
 }
+
+#wrapper{
+  /*text-align:center;*/
+  padding-left: 10%;
+  margin: 30px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.8;
+  overflow:auto;
+}
+
+
