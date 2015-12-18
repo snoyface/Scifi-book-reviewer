@@ -34,14 +34,21 @@ class BookController extends Controller
          $title = $request -> input('title');
          $auth = $request -> input('author');
          $sum = $request -> input('summary');
-
+         $rate = $request -> input('rating');
         #create a new book with data submitted
         $book = new \App\Book();
         $book->title = $title;
         $book->author = $auth;
         $book->summary = $sum;
-
         $book -> save();
+        
+        #attach rating to book table
+        $ratingBook = new \App\Rating();
+        $ratingBook ->rating = $rate;
+        $ratingBook ->save();
+        $book->ratings()->attach($ratingBook);
+
+        
         Session::flash('message', 'Successfully created book!');
         $books = \App\Book::all();
         return view('/books/member')
@@ -156,6 +163,14 @@ class BookController extends Controller
         $comment -> comment = $commented;
         $comment ->save();
         $book->comments()->attach($comment);
+        
+        return Redirect::back();
+    }
+    
+    public function rating(Request $request, $id)
+    {
+        $rating = \App\Book::findOrFail($id);
+        
         
         return Redirect::back();
     }

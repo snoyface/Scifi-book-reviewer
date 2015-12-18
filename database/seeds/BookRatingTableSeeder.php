@@ -12,9 +12,9 @@ class BookRatingTableSeeder extends Seeder
     public function run()
     {
         $books =[
-        'The Great Gatsby' => ['1','4','7'],
-        'A Fire in the Deep' => ['3','5','6','7'],
-        'Deepness in the Sky' => ['4','7','10','10']
+        'The Great Gatsby' => ['1'],
+        'A Fire in the Deep' => ['5'],
+        'Deepness in the Sky' => ['10']
         ];
 
    

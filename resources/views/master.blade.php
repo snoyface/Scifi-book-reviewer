@@ -44,8 +44,6 @@
         
       <footer>
         @yield('footer')
-        <a href={{ URL::previous() }}>Reload</a>
-        <br>
       </footer>
       </div>
     </div>
