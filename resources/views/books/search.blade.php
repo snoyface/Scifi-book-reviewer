@@ -5,7 +5,9 @@
 
 @section('content')
 
-<p>This page will allow you to search for a particular book</p>
+<p>This page will allow you to search for a particular book by Title,
+  soon you will also be able to search by rating and author.
+</p>
 
 <div class='search'>
   <form action='/books/search' method='POST'>
