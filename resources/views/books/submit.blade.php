@@ -7,14 +7,14 @@
 <div class='submission'>
   <form action='submit' method='POST'>
        <input type='hidden' name='_token' value='{{ csrf_token() }}'>
-       <p>Title?<br> <input type="string" name="title"
+       <p>Book Title<br> <input type="string" name="title"
           value="{{isset($request['title']) ? $request['title']: 'Title?'}}" /></p>
-       <p>Author?<br> <input type="string" name="author"
+       <p>Author<br> <input type="string" name="author"
           value="{{isset($request['author']) ? $request['author']: 'Author?'}}" /></p>
-       <p>Summary?<br> <input style="width:150px; height:50px;" type="string" name="summary"
+       <p>Brief Summary<br> <input style="width:150px; height:50px;" type="string" name="summary"
           value="{{isset($request['summary']) ? $request['summary']: 'Summary?'}}" /></p>
        <p> <select name="rating">
-         <option>Rating?</option>
+         <option>Rating</option>
          <option value="1">1</option>
          <optionv alue="2">2</option>
          <option value="3">3</option>
