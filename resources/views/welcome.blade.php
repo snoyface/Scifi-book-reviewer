@@ -24,7 +24,7 @@ nav{
         </div>
         <div id="create_spaceship">
           <p>To Register, click this spaceship</p>
-            <a href='/auth/login'>
+            <a href='/auth/register'>
               <img id="rocket" src='/images/simple-rocket-hi.png'
                 alt='register'>
             </a>
@@ -32,7 +32,7 @@ nav{
         <div id='login_raygun'>
           <p>To login, click the ray gun</p>
           <a href='/auth/login'>
-            <img id='raygun' src='/images/ray_gun.png'
+            <img id='raygun' src='/images/raygun.png'
               alt='login'>
         </div>
     </div>
