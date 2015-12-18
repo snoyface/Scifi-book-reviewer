@@ -12,10 +12,12 @@ Allows you to create a user, view books, edit, delete, and comment on other revi
 Future devlopment will bring a rating system via table.
 
 ## Demo
-located here: 
+located here: http://screencast.com/t/45bHE1WKMYV
 
 ## Details for teaching team
-
+This is a reviewer for a scifi book club that I will be using. Some features I hoped to get out 
+were not ready, but all in all it is stable and highlights all the items I was
+looking to put into this app. 
 
 ## Outside code
 Register gist:
