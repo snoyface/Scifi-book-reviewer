@@ -34,7 +34,6 @@
 //add comments
 //Future Feature - display name of user
 foreach($book->comments as $comment) {
-        foreach()
         echo $comment->comment.'<br><br>';
 };
 ?>

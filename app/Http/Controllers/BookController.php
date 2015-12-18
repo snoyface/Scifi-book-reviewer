@@ -125,9 +125,10 @@ class BookController extends Controller
 
     }
 
-    public function ratingSearch()
+//Future feature, search by rating
+    public function ratingSearch($rate)
     {
-        $books = \App\Book::with('ratings')->get();
+        $books = \App\Book::with('ratings', 'LIKE', $rate )->get();
 
          foreach($books as $book) {
             echo '<br>'.$book->title.' has a rating of';
