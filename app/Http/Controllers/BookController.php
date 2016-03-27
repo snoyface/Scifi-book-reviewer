@@ -9,6 +9,7 @@ use Session;
 use Input;
 use Form;
 use App\User;
+use Auth;
 
 class BookController extends Controller
 {
@@ -159,12 +160,14 @@ class BookController extends Controller
     public function comment(Request $request, $id)
     {
         $book = \App\Book::findOrFail($id);
+//      $user = \App\User::($id);
         $commented = $request -> input('comment');
+        $user = Auth::user();
         $comment = new \App\Comment();
         $comment -> comment = $commented;
         $comment ->save();
         $book->comments()->attach($comment);
-        
+        $user->comments()->attach($comment);
         return Redirect::back();
     }
     

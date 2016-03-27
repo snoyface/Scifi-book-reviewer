@@ -18,25 +18,44 @@
  <?php
  //displays the rating of the book
  $rateBook = [];
- 
- foreach($book->ratings as $rating){
-         echo 'This book has a rating of '.$rating->rating.'<br>';
-         $rateBook[] = $rating ->rating;       
-       };
 
-//Future Feature - average rating
-// if ($rateBook != null){
-       
-//     $average_rating = array_sum($rateBook) / count($rateBook);  
-//     echo 'The average rating for '.$book->title.' is '.$average_rating;    
-// }else {$rateBook = null;};
 
 //add comments
 //Future Feature - display name of user
-foreach($book->comments as $comment) {
-        echo $comment->comment.'<br><br>';
-};
+
+foreach($book->comment as $comment){
+    echo $comment->user.' said ';
+    foreach ($comment->comment as $comment){
+        echo $comment.'<br><br>';
+//
+//    foreach ($book->comments as $comment){
+//        echo $comment->comment.'<br><br>';
+}};
+
+//    foreach($book->comments as $comment) {
+//
+//        foreach($comment->user as $user){
+//            echo $user->name.' said ';
+//            echo $comment->comment.'<br><br>';
+//    }
+// };
 ?>
+<h2>Ratings</h2>
+<?php
+foreach($book->ratings as $rating){
+         echo 'This book has a rating of '.$rating->rating.'<br>';
+         $rateBook[] = $rating ->rating;
+       };
+
+
+//Future Feature - average rating
+// if ($rateBook != null){
+
+//     $average_rating = array_sum($rateBook) / count($rateBook);
+//     echo 'The average rating for '.$book->title.' is '.$average_rating;
+// }else {$rateBook = null;};
+
+ ?>
  <form action='/books/{{$book->id}}' method='POST'>
        <input type='hidden' name='_token' value='{{ csrf_token() }}'>
        <p>Comment?<br> <input type="string" name="comment"

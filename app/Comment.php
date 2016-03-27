@@ -12,9 +12,9 @@ class Comment extends Model
   {
   return $this->belongsToMany('\App\Book')->withTimestamps();;
   }
-  public function users()
+  public function user()
   {
-  return $this->belongsToMany('\App\User')->withTimestamps();;
+  return $this->belongsTo('\App\User')->withTimestamps();;
   }
   
 }

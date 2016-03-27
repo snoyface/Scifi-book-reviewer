@@ -21,10 +21,12 @@ class CreateBookCommentTable extends Migration
         # `book_id` will reference the `books table` and `tag_id` will reference the `tags` table.
         $table->integer('book_id')->unsigned();
         $table->integer('comment_id')->unsigned();
+//        $table->integer('user_id')->unsigned();
 
         # Make foreign keys
         $table->foreign('book_id')->references('id')->on('books');
         $table->foreign('comment_id')->references('id')->on('comments');
+//        $table->foreign('user_id')->references('id')->on('users');
       });
     }
 
