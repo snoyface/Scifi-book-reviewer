@@ -1,38 +1,17 @@
 
-
-# p4
-csci e-15 harvard class project 4
-
-## Live URL
-www.p4.cscie15.me
-
 ## Description
+Created using PHP, MySQL, MAMP and Laravel 5 frameworks.
 Scifi Book club database. 
 Allows you to create a user, view books, edit, delete, and comment on other reviews.
-Future devlopment will bring a rating system via table.
+Future devlopment will bring a rating system, and upload book images. 
+Created for csci e-15 Harvard class, extended to work as a stand alone project.
+
+## Live URL
+www.p4.cscie15.me (down for development)
 
 ## Demo
 located here: http://screencast.com/t/45bHE1WKMYV
 
 ## Details for teaching team
-This is a reviewer for a scifi book club that I will be using. Some features I hoped to get out 
-were not ready, but all in all it is stable and highlights all the items I was
-looking to put into this app. 
+This is a reviewer for a scifi book club that I will be using. Some features have yet to be built out. 
 
-## Outside code
-Register gist:
-https://gist.github.com/evercode1/44fc2185e3546d9609ef
-
-login gist:
-https://gist.github.com/evercode1/bc2cfc318bb49313b47f
-
-help from this tutorial:
-https://laraveltips.wordpress.com/2015/06/15/how-to-make-user-login-and-registration-laravel-5-1/
-
-Flash messages:
-https://github.com/plasticbrain/PhpFlashMessages
-
-Laravel 5 tips:
-https://laraveltips.wordpress.com/category/restful-controller-laravel-5-1/
-
-...and of course, all the teachers and TA' help. Thanks!
